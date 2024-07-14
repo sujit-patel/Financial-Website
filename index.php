@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ session_start();
 
 <body>
 
-<!-- Mobile Screen Menu Start-->
+    <!-- Mobile Screen Menu Start-->
     <aside class="aside">
         <nav class="nav2">
             <div class="menu">
@@ -24,12 +24,14 @@ session_start();
                     <h1>My <span>Money</span></h1>
                 </div>
                 <ul id="ul">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="index.html#team">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
+                    <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Home</a></li>
+                    <li><i class="fa fa-info" aria-hidden="true"></i><a href="index.php#team">About</a></li>
+                    <li><i class="fa fa-briefcase" aria-hidden="true"></i><a href="index.php#services">Services</a></li>
                     <?php if (isset($_SESSION['email'])) : ?>
-                        <li id="user-profile"><i class="fa fa-user" aria-hidden="true"></i>
-                            <a href=""><?php echo $_SESSION['email']; ?></a>
+
+                        <li id="user-profile">
+                            <img id="user_img" src="<?php echo $_SESSION['profile_image']; ?>" alt="Profile" style="width:35px;height:35px;border-radius: 50%; ">
+                            <a href=""><?php echo $_SESSION['fname']; ?></a>
                         </li>
                         <li><i class="fa fa-sign-out" aria-hidden="true"></i>
                             <a href="logout.php">Logout</a>
@@ -42,8 +44,6 @@ session_start();
                             <a href="signup.html">Sign Up</a>
                         </li>
                     <?php endif; ?>
-
-
                 </ul>
             </div>
             <div class="menu-bar">
@@ -51,10 +51,10 @@ session_start();
             </div>
         </nav>
     </aside>
-<!-- Mobile Screen Menu End-->
+    <!-- Mobile Screen Menu End-->
 
 
-<!-- Nav Part Start  -->
+    <!-- Nav Part Start  -->
     <nav class="nav1">
         <p><i class="fa fa-phone" aria-hidden="true"></i> Call Us: +91 54005 54005</p>
         <p><i class="fa fa-thumb-tack" aria-hidden="true"></i> Location: Gujrat, India</p>
@@ -77,9 +77,10 @@ session_start();
                     <a href="#services">Services</a>
                 </li>
 
-                <?php if (isset($_SESSION['email'])) : ?>
-                    <li id="user-profile"><i class="fa fa-user" aria-hidden="true"></i>
-                        <a href=""><?php echo $_SESSION['email']; ?></a>
+                <?php if (isset($_SESSION['fname'])) : ?>
+                    <li id="user-profile" style="justify-content: center;">
+                        <img id="user_img" src="<?php echo $_SESSION['profile_image']; ?>" alt="Profile" style="width:35px;height:35px;border-radius: 50%; ">
+                        <a href=""><?php echo $_SESSION['fname']; ?></a>
                     </li>
                     <li><i class="fa fa-sign-out" aria-hidden="true"></i>
                         <a href="logout.php">Logout</a>
@@ -92,7 +93,6 @@ session_start();
                         <a href="signup.html">Sign Up</a>
                     </li>
                 <?php endif; ?>
-
             </ul>
         </div>
     </nav>
@@ -114,7 +114,7 @@ session_start();
             </div>
             <div class="img2">
                 <div class="overlay"></div>
-                <img src="Assets/pexels-canva-studio-3153207.jpg" alt="">
+                <img src="Assets/pexels-canva-studio-3153207.jpg" alt="No">
                 <div class="himg-text">
                     <h2>Build Your Financial Plan With Our Specialists</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -203,77 +203,79 @@ session_start();
         </div>
     </div>
 
-    <!-- Services part  -->
-    <div id="services">
-        <h4>SERVICES</h4>
-        <h2>Our Exclusive Services We Offer For You</h2>
-        <div class="service">
-            <div class="block">
-                <div class="img">
-                    <img src="services/financial-profit.png" alt="">
+    <?php if (isset($_SESSION['fname'])) : ?>
+        <!-- Services part  -->
+        <div id="services">
+            <h4>SERVICES</h4>
+            <h2>Our Exclusive Services We Offer For You</h2>
+            <div class="service">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/financial-profit.png" alt="">
 
+                    </div>
+                    <h3>Financial Planning</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Financial Planning</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/report.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/report.png" alt="">
+                    </div>
+                    <h3>Investments Management</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Investments Management</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/money-bag.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/money-bag.png" alt="">
+                    </div>
+                    <h3>Business Loan</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Business Loan</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/budget.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/budget.png" alt="">
+                    </div>
+                    <h3>Taxes Consulting</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Taxes Consulting</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/risk.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/risk.png" alt="">
+                    </div>
+                    <h3>Insurance Consulting</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Insurance Consulting</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/cash-flow.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/cash-flow.png" alt="">
+                    </div>
+                    <h3>Retirement Planning</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Retirement Planning</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/businessman.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/businessman.png" alt="">
+                    </div>
+                    <h3>Risk Management</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Risk Management</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
-            </div>
 
-            <div class="block">
-                <div class="img">
-                    <img src="services/financial-profit.png" alt="">
+                <div class="block">
+                    <div class="img">
+                        <img src="services/financial-profit.png" alt="">
+                    </div>
+                    <h3>Technology Consulting</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
                 </div>
-                <h3>Technology Consulting</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 
 
     <!-- footer part  -->
