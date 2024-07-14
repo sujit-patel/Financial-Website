@@ -1,15 +1,15 @@
 // signup page password check 
 
-function checkPassword() {
-    const repass = document.querySelector("#repass");
-    const pass = document.querySelector("#pass");
-    if (pass.value !== repass.value) {
-        alert("Passwords do not match!");
-        return false;
-    } else {
-        return true;
-    }
-};
+// function checkPassword() {
+//     const repass = document.querySelector("#repass");
+//     const pass = document.querySelector("#pass");
+//     if (pass.value !== repass.value) {
+//         alert("Passwords do not match!");
+//         return false;
+//     } else {
+//         return true;
+//     }
+// };
 
 const allblock = document.querySelectorAll("#team .profile .block");
 
