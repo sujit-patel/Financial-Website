@@ -156,6 +156,7 @@ aside .menu-bar {
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 20px;
 }
 
 .container .overlay {
@@ -170,31 +171,28 @@ aside .menu-bar {
 
 form {
     background-color: white;
-    padding: 1.4vw 1vw;
+    padding: 15px 10px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    /* width: 25%; */
     z-index: 1;
 }
 
 form .block {
-    padding: 0.4vw;
+    padding: 5px;
     width: 100%;
 }
 
 form h1 {
-    font-size: 2.5vw;
+    /* font-size: 2.5vw; */
     display: flex;
     justify-content: center;
 
 }
 
-form label {
-    font-size: 1.5vw;
-}
 
 form ::placeholder {
     display: flex;
@@ -214,7 +212,7 @@ form input {
 }
 
 #btn button {
-    font-size: 1.4vw;
+    /* font-size: 1.4vw; */
     padding: 0.5vw 0.9vw;
     color: white;
     background-color: #4F86F9;
@@ -223,7 +221,7 @@ form input {
 }
 
 form p {
-    font-size: 1.4vw;
+    /* font-size: 1.4vw; */
     padding-top: 0.7vw;
 }
 
