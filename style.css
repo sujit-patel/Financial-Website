@@ -80,6 +80,11 @@ aside .menu-bar {
     font-size: 30px;
     cursor: pointer;
 }
+aside #user-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 /* nav1 part  */
 .nav1 {
@@ -117,7 +122,9 @@ aside .menu-bar {
 #nav2 .menu-icon {
     display: none;
 }
-
+#user-profile{
+    gap: 10px;
+}
 #nav2 .menu ul {
     display: flex;
     padding-right: 2vw;
@@ -125,6 +132,8 @@ aside .menu-bar {
 
 #nav2 .menu ul li {
     padding: 0 1vw;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width:600px) {
@@ -144,6 +153,7 @@ aside .menu-bar {
         display: none;
     }
 }
+
 
 /* hero part  */
 .hero {
